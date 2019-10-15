@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>vars and arays</title>
+    <meta name="description" content="Examples of for loop and arrays" />
+    <meta name="author" content="helsten-jeff" />
+  </head>
+
+  <body>
+    <section>
+      <h3>Variables</h3>
+      <pre>
+
+// I am immutable
+const foo = 1;
+/**
+ * Error when trying to manipulate const
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Invalid_const_assignment
+ **/
+// This is commented out so this file can run
+// foo += 1
+
+// I am mutable
+let bar = 1;
+bar += 1;
+
+console.log(bar);
+// 2
+
+
+      </pre>
+<h3>For Loop</h3>
+      <pre>
+const concepts = [
+  'Loops',
+  'Conditional Statements',
+  'Functions',
+  'Variables',
+  'Parameters',
+  'Arrays',
+  'Associative Arrays',
+]
+      </pre>
+
+      <span>
+        Let's use a for loop to run through this array, and return them in reverse order
+      </span>
+      <button id="reverse">Reverse!</button>
+      <button id="forward">Forward!</button>
+      <div><span>Manipulated array: </span><span id="output"></span></div>
+
+      <h3>For/in Loop</h3>
+      <pre>
+
+const students = {
+  suzie: {
+    age: 18,
+  },
+  stan: {
+    age: 20,
+  },
+  marco: {
+    age: 19,
+  },
+  polo: {
+    age: 17,
+  },
+}
+
+      </pre>
+      <span>
+        Let's use a for/in loop to run through this array, and return the student ages
+      </span>
+      <button id="getAges">Get ages!</button>
+      <div><span>Ages array: </span><span id="ages-output"></span></div>
+ 
+    </section>
+
+    <script src="./vars-and-loops.js"></script>
+
+
+  </body>
+</html>
