@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Javascript Events</title>
+    <meta name="description" content="Examples of javascript events" />
+    <meta name="author" content="helsten-jeff" />
+    <link rel="stylesheet" type="text/css" href="javascript-events.css" />
+  </head>
+
+  <body>
+    <section>
+      <h1>Javascript Events</h1>
+      <span>Mouse and touch events</span>
+      <div id="container">
+        <div id="click" onclick="onClick()"></div>
+        <div
+          id="mouseEnterLeave"
+          onmouseenter="mouseEnter(this)"
+          onmouseleave="mouseLeave(this)"
+        >
+          mouseEnter, mouseLeave
+        </div>
+<div
+          id="mouseEnterLeave"
+          ontouchstart="mouseEnter(this)"
+          ontouchend="mouseLeave(this)"
+        >
+          touchStart, touchEnd
+        </div>
+
+        <div
+          id="mouseOver"
+          onmouseover="mouseOver(this)"
+          onmouseleave="mouseLeave(this)"
+        >
+          mouseOver
+          <div id="child"></div>
+        </div>
+        <div
+          id="mouseUpDown"
+          onmousedown="mouseDown(this)"
+          onmouseup="mouseUp(this)"
+        >
+          mouseUp, mouseDown
+        </div>
+          <div onmouseover="cssAnimationColor(this)">CSS Animation</div>
+          <div id="transition" onmouseover="cssTransition(this)">CSS Transition</div>
+      </div>
+    </section>
+
+    <script src="./javascript-events.js"></script>
+  </body>
+</html>
