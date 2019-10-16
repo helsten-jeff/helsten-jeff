@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>functions and arays</title>
+    <meta name="description" content="Examples of for loop and arrays" />
+    <meta name="author" content="helsten-jeff" />
+</head>
+
+<body>
+    <section>
+        <h3>functions, arrays and for loops</h3>
+        <pre>
+        const people = [
+          {
+            name: "stan",
+            age: 18,
+            height: 63
+          },
+          {
+            name: "george",
+            age: 27,
+            height: 75
+          },
+          {
+            name: "frank",
+            age: 59,
+            height: 69
+          },
+          {
+            name: "suzie",
+            age: 22,
+            height: 60
+          }
+        ];
+      </pre>
+      <span>
+        Let's use a for loop to run through this array, get the people's ages, and sort them.
+      </span>
+      <select id="select">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+        <option value="default">Default</option>
+      </select>
+      <button id="submit">Sort!</button>
+
+      <div><span>Sorted array: </span><span id="output"></span></div>
+    </section>
+
+    <script src="./fns-and-arrays.js"></script>
+  </body>
+</html>
