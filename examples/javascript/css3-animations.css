@@ -1,0 +1,105 @@
+#container {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+#container > div {
+  width: 100px;
+  height: 100px;
+  background-color: #e2e2e2;
+  margin: 24px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+
+div.slide {
+  animation: 3s infinite alternate slide;
+}
+
+div.sideToSide{
+  animation: 1s infinite alternate sideToSide;
+}
+
+div.slideAndSideToSide {
+  animation-name: slide, sideToSide;
+  animation-duration: 3s, 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite, infinite;
+}
+
+div.tooltip {
+  text-align: center;
+  animation: 5s infinite alternate tooltipShow;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  height: 32px !important;
+  width: 150px !important;
+}
+
+div.tooltip:before {
+  border: solid;
+ border-color: #e2e2e2 transparent;
+ border-width: 0 6px 6px 6px;
+ bottom: 32px;
+ content: "";
+ left: 50%;
+ position: absolute;
+ z-index: 99;
+}
+@keyframes slide {
+  from {
+    bottom: -100px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes sideToSide {
+  0% {
+    left: 20px;
+  }
+  50% {
+    left: -20px;
+  }
+  100% {
+    left: 20px;
+  }
+}
+
+@keyframes tooltipShow {
+  0% {
+    opacity: 0;
+    top: -10px;
+    visibility: hidden;
+  }
+  30% {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    top: -10px;
+  }
+}
+
