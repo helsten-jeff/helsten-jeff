@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Ajax</title>
+    <meta name="description" content="Examples of Ajax calls/methods" />
+    <meta name="author" content="helsten-jeff" />
+  </head>
+
+  <body>
+    <section>
+      <h3>Ajax</h3>
+      <input id="url" value="https://helsten-jeff.github.io/order-data.json" />
+      <button onclick="fireXhrRequest()">Send XHR request</button>
+      <div>Progress: <span id="progress"></span></div>
+      <div>Status: <span id="status"></span></div>
+      <div>
+        Payload:
+        <pre id="response1"></pre>
+      </div>
+      <div><pre id="response2"></pre></div>
+    </section>
+    <script src="./ajax.js"></script>
+  </body>
+</html>
