@@ -11,3 +11,5 @@ Javascript
 - [CSS3 Animations](https://helsten-jeff.github.io/examples/javascript/css3-animations.html)
 
 - [Ajax](https://helsten-jeff.github.io/examples/javascript/ajax.html)
+
+- [Javascript Objects and Inheritance](https://helsten-jeff.github.io/examples/javascript/object-inheritance.html)
