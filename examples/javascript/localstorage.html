@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>LocalStorage</title>
+    <meta name="description" content="Examples of localStorage" />
+    <meta name="author" content="helsten-jeff" />
+  </head>
+
+  <body>
+    <section>
+      <h1>LocalStorage</h1>
+      <span style="font-size: 12px; color: #767676"
+        >Each example here checks for window.localStorage to be truthy</span
+      >
+      <label for="key">Key</label>
+      <input type="text" name="key" id="key" />
+      <label for="val">Value</label>
+      <input type="text" name="val" id="val" />
+      <button onclick="writeToLs()">Write key to localStorage</button>
+
+      <button onclick="readLs()">Display localStorage by selected Key</button>
+
+      <button onclick="removeLsByKey()">
+        Remove item by key from localStorage
+      </button>
+
+      <button onclick="nukeLs()">Delete all localStorage</button>
+
+      <div>Selected localStorage value: <span id="LS"></span></div>
+    </section>
+
+    <script src="./localstorage.js"></script>
+  </body>
+</html>
