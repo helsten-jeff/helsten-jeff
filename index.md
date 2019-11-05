@@ -7,3 +7,7 @@ Javascript
 - [Variables and Loops](https://helsten-jeff.github.io/examples/javascript/vars-and-loops.html)
 
 - [Javascript Mouse (and Touch) Events](https://helsten-jeff.github.io/examples/javascript/javascript-events.html)
+
+- [CSS3 Animations](https://helsten-jeff.github.io/examples/javascript/css3-animations.html)
+
+- [Ajax](https://helsten-jeff.github.io/examples/javascript/ajax.html)
