@@ -19,3 +19,5 @@ Javascript
 - [JSON](https://helsten-jeff.github.io/examples/javascript/json.html)
 
 - [localStorage](https://helsten-jeff.github.io/examples/javascript/localstorage.html)
+
+- [HTML5 Media](https://helsten-jeff.github.io/examples/javascript/media.html)
