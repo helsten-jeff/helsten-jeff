@@ -1,0 +1,54 @@
+#container {
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: #e2e2e2;
+  margin: 24px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+
+div.height{
+transition: width 1s;
+}
+div.height:hover {
+  width: 150px;
+}
+
+div.swell{
+  transition: all 1s;
+}
+
+div.swell:hover{
+  background-color: purple;
+  border-radius: 24px;
+  height: 110px;
+  width: 110px;
+}
+
+div.slant{
+  transition: height 1s, width 0.1s, background-color 1.5s;
+}
+
+div.slant:hover {
+  height: 50px;
+  width: 200px;
+  background-color: orange;
+}
+
