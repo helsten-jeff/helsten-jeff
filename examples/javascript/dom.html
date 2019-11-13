@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The DOM</title>
+    <meta name="description" content="Examples of using the DOM" />
+    <meta name="author" content="helsten-jeff" />
+  </head>
+
+  <body>
+    <section>
+      <h1>The DOM</h1>
+      <h3>
+        The Document object
+      </h3>
+      <span>document.location</span>
+      <span id="location"></span>
+      <h3>Event listeners</h3>
+      <h4>
+        These all use the same function, passing in a reference to their element
+        as an event target
+      </h4>
+      <div id="click">Click here</div>
+      <div id="hover">Hover mouse here</div>
+      <div id="mouseout">Mouseout here</div>
+
+      <label for="textInput">Type Text</label>
+      <input name="textInput" id="textInput" type="text"/>
+      <span>Value from text input populated on document blur (leave this tab and come back):</span>
+      <span id="textInputValue"></span>
+    </section>
+
+    <script src="./dom.js"></script>
+  </body>
+</html>
