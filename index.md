@@ -23,3 +23,6 @@ Javascript
 - [localStorage](https://helsten-jeff.github.io/examples/javascript/localstorage.html)
 
 - [HTML5 Media](https://helsten-jeff.github.io/examples/javascript/media.html)
+
+- [DOM](https://helsten-jeff.github.io/examples/javascript/dom.html)
+
