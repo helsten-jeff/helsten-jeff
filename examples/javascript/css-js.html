@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>CSS and Javascript</title>
+    <meta name="description" content="Examples of css and JS" />
+    <meta name="author" content="helsten-jeff" />
+    <link rel="stylesheet" type="text/css" href="javascript-events.css" />
+  </head>
+
+  <body>
+    <section>
+      <h1>CSS & Javascript </h1>
+      <div id="container">
+        <div id="click" onclick="onClick()"></div>
+        <div
+          id="mouseEnterLeave"
+          onmouseenter="mouseEnter(this)"
+        >
+        style.backgroundColor
+        </div>
+        <div
+          id="mouseUpDown"
+          onmousedown="mouseDown(this)"
+          onmouseup="mouseUp(this)"
+        >
+        style.boxShadow
+        </div>
+          <div onmouseover="cssAnimationColor(this)">CSS Animation with JS</div>
+          <div id="transition" onmouseover="cssTransition(this)">CSS Transition with JS</div>
+      </div>
+    </section>
+
+    <script src="./javascript-events.js"></script>
+  </body>
+</html>
