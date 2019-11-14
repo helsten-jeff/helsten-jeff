@@ -30,6 +30,56 @@
       <button onclick="nukeLs()">Delete all localStorage</button>
 
       <div>Selected localStorage value: <span id="LS"></span></div>
+      <hr />
+      <h1>SessionStorage</h1>
+      <label for="keySS">Key</label>
+      <input type="text" name="keySS" id="keySS" />
+      <label for="valSS">Value</label>
+      <input type="text" name="valSS" id="valSS" />
+      <button onclick="writeToSS()">Write key to sessionStorage</button>
+
+      <button onclick="readSS()">Display localStorage by selected Key</button>
+
+      <div>
+        Selected localStorage value ( I will dissapear forever when you close
+        this tab ): <span id="SS"></span>
+      </div>
+      <hr />
+      <h1>Storing objects, arrays, etc.</h1>
+      <h3>
+        Everything written to localStorage or sessionStorage needs to be stringified. It
+        needs to be parsed after being read if it is to be used as it's intended
+        shape
+      </h3>
+      <span>Here is an example object from order-data.json:</span>
+      <pre>
+[
+  {
+   "orderId": 123456,
+   "variants": {
+     "quantity": 2,
+     "variantId": 98765,
+     "title": "Shirt"
+   }
+  }
+]</pre
+      >
+
+      <button onclick="storeArray()">Store Array</button>
+
+      <button onclick="getArray()">Get Array</button>
+ 
+     <span id="stringifiedArray"></span>
+
+      <button onclick="storeBoolean()">Store Boolean</button>
+
+      <button onclick="getIsString()">Get it from LocalStorage</button>
+      <span>Is it a string?</span><span id="stringifiedBoolean"></span>
+
+      <span id="stringifiedBoolean"></span>
+
+
+
     </section>
 
     <script src="./localstorage.js"></script>
