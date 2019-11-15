@@ -14,6 +14,8 @@ Javascript
 
 - [CSS3 Transitions](https://helsten-jeff.github.io/examples/javascript/css3-transitions.html)
 
+- [CSS3 Animations, Transforms, and Transitions](https://helsten-jeff.github.io/examples/javascript/animation-transition-transform.html)
+
 - [Ajax](https://helsten-jeff.github.io/examples/javascript/ajax.html)
 
 - [Javascript Objects and Inheritance](https://helsten-jeff.github.io/examples/javascript/object-inheritance.html)
