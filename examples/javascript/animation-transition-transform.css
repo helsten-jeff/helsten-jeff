@@ -1,0 +1,26 @@
+div {
+  width: 100px;
+  height: 100px;
+  background-color: #323232;
+}
+div#first {
+  transition: transform 0.5s linear;
+}
+div#first:hover {
+  transform: translateX(15px);
+  transform: translateY(50px);
+  transform: translate(15px, -40px);
+  animation-duration: 0.1s;
+  animation-name: shake;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  from {
+    margin-left: -10px;
+  }
+  to {
+    margin-left: 10px;
+  }
+}
