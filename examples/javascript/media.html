@@ -9,19 +9,26 @@
     <meta name="author" content="helsten-jeff" />
   </head>
 
-  <body>
+  <body onload="drawShape()">
     <section>
       <h3>Media Tags</h3>
       <h4>Audio</h4>
       <div>
         <audio src="../../media/Welcome.wav" controls="controls">
-          Your browser does not support this audio file type. Use Firefox, or Safari.
+          Your browser does not support this audio file type. Use Firefox, or
+          Safari.
         </audio>
       </div>
       <h4>Video</h4>
       <div>
-        <video src="../../Video.mp4" controls="controls">
-          Your browser does not support this video file type. Use Safari or Chrome.
+        <video
+          src="../../media/Video.mp4"
+          controls="controls"
+          width="320"
+          height="240"
+        >
+          Your browser does not support this video file type. Use Safari or
+          Chrome.
         </video>
       </div>
 
@@ -36,6 +43,31 @@
           allowfullscreen
         ></iframe>
       </div>
+      <canvas id="canvas"></canvas>
     </section>
   </body>
+  <script>
+    function drawShape() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        // Draw shapes
+        ctx.beginPath();
+        ctx.arc(75, 95, 50, 0, Math.PI * 2, true); // Outer circle
+
+        ctx.moveTo(110, 75);
+        ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth
+
+        ctx.moveTo(65, 65);
+        ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye
+
+        ctx.moveTo(95, 65);
+        ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye
+        ctx.stroke();
+      } else {
+        alert('Are you using windows me?');
+      }
+    }
+  </script>
 </html>
