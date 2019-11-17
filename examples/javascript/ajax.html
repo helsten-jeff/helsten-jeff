@@ -22,6 +22,18 @@
       </div>
       <div><pre id="response2"></pre></div>
     </section>
+    <section>
+      <h3>OpenWeather API</h3>
+      <label for="zip">ZipCode</label>
+      <input type="number" id="zip"/>
+      <button onclick="getWeatherByZip()">Submit</button>
+    </section>
+    <section>
+      <div>City: <span id="locality"></span></div>
+      <div>Current Temp: <span id="temp"></span></div>
+      <div>Weather: <span id="description"></span></div>
+      <div>Wind Speed: <span id="wind"></span></div>
+    </section>
     <script src="./ajax.js"></script>
   </body>
 </html>
