@@ -19,7 +19,6 @@ document.getElementById('mouseout').onmouseout = e => {
   toggleRed(e);
 };
 
-document.addEventListener('blur', function(){
-  console.log('blurring')
+document.addEventListener('click', function(){
   document.getElementById('textInputValue').innerHTML = document.getElementById('textInput').value;
 });
