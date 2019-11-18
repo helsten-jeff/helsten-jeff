@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta
+      name="description"
+      content="A simple grocery list app, that also helps you know how to dress for the trip."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body onload="initializeApp()">
+    <section>
+      <h1>Today's Weather</h1>
+      <span id="statusEl"></span>
+      <img id="weatherIcon" class="weather-widget__img" src="" alt="Weather, USA" width="50" height="50">
+      <div>City: <span id="locality"></span></div>
+      <div>Current Temp: <span id="temp"></span></div>
+      <div>Weather: <span id="description"></span></div>
+      <div>Wind Speed: <span id="wind"></span></div>
+      <label for="zip">ZipCode</label>
+      <input id="zip" name="zip"/>
+      <button onclick="getWeatherByZip()">Get Today's Weather</button>
+    </section>
+    <section>
+      <h1>Grocery List</h1>
+      <label for="add-item">New Item</label>
+      <input type="text" id="add-item" name="add-item" />
+      <button id="add-item-btn" onclick="addNewItem()">Add</button>
+      <ul id="grocery-list"></ul>
+    </section>
+  </body>
+  <script type="text/javascript" src="./index.js"></script>
+  <script type="text/javascript" src="./weather.js"></script>
+</html>
