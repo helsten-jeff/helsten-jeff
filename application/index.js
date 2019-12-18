@@ -1,9 +1,12 @@
 const validateUniqueItem = item => {};
 
 const handleDelete = el => {
-  const parentLi = el.parentNode;
-  parentLi.parentNode.removeChild(parentLi);
-  handleSave();
+  el.classList.remove('fadeIn');
+  el.classList.add('fadeOut');
+  setTimeout(() => {
+    el.parentNode.removeChild(el);
+    handleSave();
+  }, 2000);
 };
 
 const editItem = el => {
@@ -11,29 +14,33 @@ const editItem = el => {
   const newElement = document.createRange().createContextualFragment(`
     <li id="${el.id}">
     <span class="list-item">${val}</span>
+    <div>
       <button
-        onclick="handleEdit(this)"
+        class="edit"
+        onclick="handleEdit(${el.id})"
       >
         Edit
       </button>
       <button
-        onclick="handleDelete(this)"
+        class="delete"
+        onclick="handleDelete(el)"
       >
         Delete
       </button>
+      </div>
     </li>`);
   el.parentNode.replaceChild(newElement, el);
   handleSave();
 };
 
-const handleEdit = el => {
-  const parentLi = el.parentNode;
+const handleEdit = (liToEdit, name = '') => {
+  const id = liToEdit.id;
   const tempInput = document.createRange().createContextualFragment(`
-  <input type="text" id="edit-${parentLi.id}" value="${parentLi.children[0].innerHTML}"/>
-  <button onclick="editItem(${parentLi.id})">Update</button>
+  <input type="text" id="edit-${id}" value="${name}"/>
+  <button class="update" onclick="editItem(${id})">Update</button>
   `);
-  parentLi.innerHTML = '';
-  parentLi.appendChild(tempInput);
+  liToEdit.innerHTML = '';
+  liToEdit.appendChild(tempInput);
 };
 
 const addNewItem = () => {
@@ -69,18 +76,22 @@ const addNewItem = () => {
     //list.appendChild(newLi);
     input.value = '';
     const newElement = document.createRange().createContextualFragment(`
-    <li id="${uniqueId}">
+    <li id="${uniqueId}" class="new-item fadeIn">
     <span class="list-item">${name}</span>
+    <div>
       <button
-        onclick="handleEdit(this)"
+        class="edit"
+        onclick="handleEdit(${uniqueId}, name)"
       >
         Edit
       </button>
       <button
-        onclick="handleDelete(this)"
+        class="delete"
+        onclick="handleDelete(${uniqueId})"
       >
         Delete
       </button>
+        </div>
     </li>`);
     list.appendChild(newElement);
     handleSave();
@@ -97,6 +108,12 @@ const handleSave = () => {
 };
 
 const initializeApp = () => {
+  const zipCode = localStorage.getItem('zipCode');
+  if (zipCode) {
+    document.getElementById('zipCheck').value = 'checked';
+    document.getElementById('zip').value = zipCode;
+  }
+
   const groceryList = localStorage.getItem('groceryList');
   if (JSON.parse(groceryList).length) {
     JSON.parse(groceryList).forEach(name => {
@@ -109,19 +126,43 @@ const initializeApp = () => {
       const newElement = document.createRange().createContextualFragment(`
     <li id="${uniqueId}">
     <span class="list-item">${name}</span>
+    <div>
       <button
-        onclick="handleEdit(this)"
+        class="edit"
+        onclick="handleEdit(${uniqueId}, name)"
       >
         Edit
       </button>
       <button
-        onclick="handleDelete(this)"
+        class="delete"
+        onclick="handleDelete(${uniqueId})"
       >
         Delete
       </button>
+      </div>
     </li>`);
       const list = document.getElementById('grocery-list');
       list.appendChild(newElement);
     });
+  }
+};
+
+const toggleRememberZip = () => {
+  if (localStorage.getItem('zipCode')) {
+    localStorage.removeItem('zipCode');
+  } else {
+    const val = document.getElementById('zip').value;
+    localStorage.setItem('zipCode', val);
+  }
+};
+
+const toggleWeatherDisplay = () => {
+  const el = document.getElementById('weatherContent');
+  if (el.classList.contains('hidden')) {
+    el.classList.remove('hidden');
+    document.getElementById('chevron').classList.remove('chevron-spin');
+  } else {
+    el.classList.add('hidden');
+    document.getElementById('chevron').classList.add('chevron-spin');
   }
 };

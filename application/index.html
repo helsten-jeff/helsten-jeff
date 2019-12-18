@@ -8,28 +8,95 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body onload="initializeApp()">
-    <section>
-      <h1>Today's Weather</h1>
-      <span id="statusEl"></span>
-      <img id="weatherIcon" class="weather-widget__img" src="" alt="Weather, USA" width="50" height="50">
-      <div>City: <span id="locality"></span></div>
-      <div>Current Temp: <span id="temp"></span></div>
-      <div>Weather: <span id="description"></span></div>
-      <div>Wind Speed: <span id="wind"></span></div>
-      <label for="zip">ZipCode</label>
-      <input id="zip" name="zip"/>
-      <button onclick="getWeatherByZip()">Get Today's Weather</button>
-    </section>
-    <section>
-      <h1>Grocery List</h1>
-      <label for="add-item">New Item</label>
-      <input type="text" id="add-item" name="add-item" />
-      <button id="add-item-btn" onclick="addNewItem()">Add</button>
-      <ul id="grocery-list"></ul>
-    </section>
+    <div class="app">
+      <section style="border: 1px solid #ededed; position: relative;">
+        <button id="toggleButton" onClick="toggleWeatherDisplay()"><img src="./images/chevron.png" id="chevron" alt="chevron-down" height="16" width="16"/></button>
+        <h1>Today's Weather</h1>
+        <div id="weatherContent">
+          <div
+            class="row"
+            style="justify-content: flex-end;flex-wrap: wrap; justify-content: center;"
+          >
+            <div>
+              <label for="zip">ZipCode</label>
+              <input id="zip" name="zip" type="number" />
+            </div>
+            <button
+              class="primaryBtn"
+              onclick="getWeatherByZip()"
+              style="align-self: flex-end;"
+            >
+              Get Today's Weather
+            </button>
+          </div>
+
+          <div
+            style="display: flex; justify-content: center; flex-direction: column; align-items:center; text-align:center"
+          >
+          <span id="statusEl" style="text-align: center; font-size: 10px; color: #767676; margin-top: 24px; height: 10px;">powered by:</span>
+              <img
+                id="weatherIcon"
+                class="weather-widget__img"
+                src="https://openweathermap.org/themes/openweathermap/assets/img/openweather-negative-logo-RGB.png"
+                alt=""
+                width="120"
+                height="50"
+              />
+            <div class="weather-item description-item">
+              <span id="description"></span>
+            </div>
+          </div>
+          <div class="weather-item">City: <span id="locality"></span></div>
+          <div class="weather-item">Current Temp: <span id="temp"></span></div>
+          <div class="weather-item">
+            Weather: <span id="description"></span>
+          </div>
+          <div class="weather-item">Wind Speed: <span id="wind"></span></div>
+          <div class="weather-item">
+            <label
+              for="rememberZip"
+              class="inline-label"
+              style="padding-left: 0 !important;"
+              >Remember Zipcode</label
+            >
+            <input
+              type="checkbox"
+              name="rememberZip"
+              id="zipCheck"
+              onclick="toggleRememberZip()"
+            />
+          </div>
+        </div>
+      </section>
+      <section style="border: 1px solid #ededed;">
+        <h1>Grocery List</h1>
+        <div
+          class="row"
+          style="justify-content: flex-end;flex-wrap: wrap; justify-content: center;"
+        >
+          <div>
+            <label for="add-item">New Item</label>
+            <input type="text" id="add-item" name="add-item" />
+          </div>
+          <button
+            id="add-item-btn"
+            class="primaryBtn"
+            style="align-self: flex-end;"
+            onclick="addNewItem()"
+          >
+            Add
+          </button>
+        </div>
+        <ul id="grocery-list"></ul>
+      </section>
+    </div>
   </body>
   <script type="text/javascript" src="./index.js"></script>
   <script type="text/javascript" src="./weather.js"></script>
