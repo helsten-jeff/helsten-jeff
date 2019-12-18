@@ -1,0 +1,213 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  background-color: #f0f0f0ed;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.app {
+  background-color: #fff;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 16px;
+}
+
+ul {
+  width: 100%;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+#grocery-list li {
+  display: flex;
+  justify-content: space-between;
+  height: 26px;
+  line-height: 26px;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+div.weather-item {
+  width: 100%;
+}
+
+div.weather-item span {
+  font-weight: bold;
+}
+.description-item {
+  padding-bottom: 16px;
+  height: 16px;
+}
+
+span.list-item {
+  display: inline-block;
+  width: 100px;
+}
+
+label {
+  font-size: 12px;
+  color: #767676;
+  display: block;
+  padding-left: 8px;
+}
+
+label.inline-label {
+  display: inline;
+}
+
+input[type='text'],
+input[type='number'] {
+  height: 27px;
+  line-height: 27px;
+  color: #323232;
+  border: 1px solid #767676;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+
+button.primaryBtn {
+  width: 160px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: #111;
+  color: #fff;
+  border: 0;
+  margin: 0 16px;
+  text-transform: uppercase;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  button.primaryBtn {
+    margin: 16px;
+  }
+}
+
+button.edit,
+button.delete {
+  border: 0;
+  height: 16px;
+  border-radius: 4px;
+  height: 26px;
+  cursor: pointer;
+}
+
+button.delete {
+  background-color: #fd4242;
+  margin-left: 8px;
+}
+
+button.delete:hover {
+  background-color: #d33;
+}
+
+button.edit:hover,
+button.update:hover {
+  background-color: #aaa;
+}
+
+button.update {
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  width: 96px;
+}
+
+.centered {
+  text-align: center;
+}
+
+#weatherIcon {
+  margin: 4px 32px 8px 32px;
+  padding: 4px;
+  background-color: #111;
+  border-radius: 6px;
+  transition: width 0.5s;
+}
+
+#weatherContent {
+  height: 330px;
+  opacity: 1;
+  overflow: visible;
+  transition: all 0.3s linear;
+}
+#weatherContent.hidden {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#toggleButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.new-item {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+}
+
+#chevron {
+  transition: all 400ms cubic-bezier(0.64, 0.01, 0.38, 1) 0s;
+}
+.chevron-spin {
+  transform: rotate(540deg);
+}
+
+/* TRANSITIONS */
+
+.fadeOut {
+  animation: 2s fadeOut;
+}
+
+.fadeIn {
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+}
+
+/* KEYFRAMES */
+
+@keyframes fadeOut {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
