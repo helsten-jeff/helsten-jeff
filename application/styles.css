@@ -56,7 +56,9 @@ div.weather-item span {
 
 span.list-item {
   display: inline-block;
-  width: 100px;
+  width: 155px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 label {
@@ -155,8 +157,8 @@ button.update {
 
 #toggleButton {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 18px;
+  right: 16px;
   border: 0;
   background-color: transparent;
   cursor: pointer;
